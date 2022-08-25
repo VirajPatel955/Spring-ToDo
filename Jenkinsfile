@@ -10,7 +10,8 @@ pipeline {
             steps {
                 sh '''
                 mvn clean install
-                mv ./target/*.war /jenkins/project-wars/project-${BUILD_NUMBER}.war
+                mkdir -p /home/jenkins/project-wars
+                mv ./target/*.war /home/jenkins/project-wars/project-${BUILD_NUMBER}.war
                 '''
             }
         }
